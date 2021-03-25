@@ -22,7 +22,7 @@ const Country = props => {
 
 
     generateCountryData(countryName);
-  }, [countryName]);
+  }, [countryName, searchResults]);
 
 
   const generatedBorders = () => {
