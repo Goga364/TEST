@@ -1,0 +1,141 @@
+body{
+  background-color: rgba(52, 73, 94, 0.9);
+}
+
+
+/* Home Page - Search Field */
+.search-filter-container {
+  display: flex;
+  height: 40px;
+  margin: 40px auto;
+  width: 570px;
+  border-radius: 40px;
+  box-shadow: 4px 8px 28px black;
+}
+
+#search-box {
+  width: 66%;
+  height: 100%;
+  font-size: 16px;
+  padding: 0px 20px 0px 20px;
+  border-radius: 40px 0 0 40px;
+  outline: none;
+  border: none
+}
+.filter-box{
+  width: 33%;
+  height: 100%;
+}
+
+/* Home Page - Tiles */
+
+.tiles-container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 5vw;
+}
+.each-tile {
+  background-color: rgba(247, 241, 227, 0.5);
+  margin: 10px 20px 50px 20px;
+  height: 45vh;
+  border-radius: 1%;
+  box-shadow: 3px 13px 5px black;
+}
+.flag {
+  width: 100%;
+  height: 24vh;
+}
+.country-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.tile-description {
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.borders-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.borders {
+  padding: 5px;
+  margin: 0 0 5px 5px;
+}
+.border-li {
+  display: flex;
+}
+
+.each-tile-link:active,
+.each-tile-link:visited,
+.each-tile-link:link,
+.links:active,
+.links:visited,
+.links:link{
+  text-decoration: none;
+  color: #0a3d62;
+}
+.links {
+  background-color: #bdc3c7;
+  border-radius: 40px;
+}
+
+
+/* Country Page */
+.home-btn{
+  position: relative;
+  top: 42px;
+  left: 5vw;
+  padding: 10px;
+}
+
+.country-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.img{
+  height: 60vh;
+  max-width: 45vw;
+}
+.country-info-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  width: 40vw;
+}
+.country-info-list li {
+  margin: 10px;
+}
+
+
+/* Media queries */
+@media screen and (max-width: 850px){
+  .tiles-container{
+    grid-template-columns: 50% 50%;
+    width: 80vw;
+    margin: 0 auto;
+  }
+  .country-box{
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10vh;
+  }
+  .img{
+    max-width: 95vw;
+  }
+}
+@media screen and (max-width: 550px){
+  .tiles-container{
+    grid-template-columns: auto;
+    margin: 0 auto;
+    width: 70vw;
+  }
+  .search-filter-container{
+    width: 450px;
+  }
+}
