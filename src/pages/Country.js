@@ -9,18 +9,20 @@ const Country = props => {
   const [languages, setLanguages] = useState([]);
   const [borders, setBorders] = useState([])
 
-  const generateCountryData = countryName => {
-    if(searchResults.length){
-      const data = searchResults.find(item => item.name.toLowerCase() === countryName.toLowerCase());
-      setData(data)
-      setLanguages(data.languages)
-      setBorders(data.borders)
-    }
-  }
 
   useEffect(() => {
+    const generateCountryData = countryName => {
+      if(searchResults.length){
+        const data = searchResults.find(item => item.name.toLowerCase() === countryName.toLowerCase());
+        setData(data)
+        setLanguages(data.languages)
+        setBorders(data.borders)
+      }
+    }
+
+
     generateCountryData(countryName);
-  }, [countryName, generateCountryData]);
+  }, [countryName]);
 
 
   const generatedBorders = () => {

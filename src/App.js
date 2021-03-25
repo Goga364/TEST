@@ -30,15 +30,17 @@ const App = () => {
       })
   }, [])
 
-  const filterByRegion = arr => {
-    if (selectedRegion.value !== 'all') {
-      return arr.filter(item => item.region.toLowerCase() === selectedRegion.value);
-    }
-    return arr;
-  }
+
 
   useEffect(() => {
     let results
+    const filterByRegion = arr => {
+      if (selectedRegion.value !== 'all') {
+        return arr.filter(item => item.region.toLowerCase() === selectedRegion.value);
+      }
+      return arr;
+    }
+
 
     results = countries.filter(each =>
       each.name.toLowerCase().includes(selectedCountry.toLowerCase())
@@ -46,7 +48,7 @@ const App = () => {
     results = filterByRegion(results)
 
     setSearchResults(results);
-  }, [countries, selectedCountry, selectedRegion, filterByRegion])
+  }, [countries, selectedCountry, selectedRegion])
 
 
 
