@@ -25,7 +25,7 @@ const styles = {
 }
 
 const Find = props => {
-  const { options, selectedCountry, handleCountry, handleRegion, selectedRegion } = props;
+  const { options, selectedCountry, handleCountry, handleRegion } = props;
   return(
     <div className='search-filter-container'>
         <input

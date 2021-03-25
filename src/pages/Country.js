@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useHistory, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const Country = props => {
   const { searchResults, countries } = props;
@@ -20,7 +20,7 @@ const Country = props => {
 
   useEffect(() => {
     generateCountryData(countryName);
-  }, [countryName]);
+  }, [countryName, generateCountryData]);
 
 
   const generatedBorders = () => {
