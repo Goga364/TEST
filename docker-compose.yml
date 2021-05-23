@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: countries_com-frontend
+    build: ./
+    # command: serve -s build -l 3000
+    command: npm run start
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+  nginx:
+    image: nginxinc/nginx-unprivileged:stable
+    container_name: countries_com-nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+    ports:
+      - 80:8080
